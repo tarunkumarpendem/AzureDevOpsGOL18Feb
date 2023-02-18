@@ -13,4 +13,11 @@ parameters:
     default: '1.11'
 
 steps:
-  - script: echo hello
+  - task: Maven@3
+    inputs:
+      mavenPOMFile: 'pom.xml'
+      goals: 'package'
+      publishJUnitResults: yes
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      jdkVersionOption: "${{ parameters.jdkVersion }}"
+      
