@@ -11,3 +11,6 @@ parameters:
     displayName: 'Java Version'
     type: string
     default: '1.11'
+
+steps:
+  - script: echo hello
